@@ -8,10 +8,12 @@
 			<th>Last Name</th>
 			<th>Role</th>
 		</tr>
-		<tr>
-			<td>Yugesh</td>
-			<td>Palvai</td>
-			<td>Organizer</td>
-		</tr>
+		<% @group.group_users.each do |group_user| %>
+			<tr>
+				<td><%= group_user.user.first_name %></td>
+				<td><%= group_user.user.last_name %></td>
+				<td><%= group_user.role.capitalize %></td>
+			</tr>
+		<% end %>
 	</table>
 </div>

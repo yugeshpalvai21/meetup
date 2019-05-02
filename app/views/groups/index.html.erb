@@ -5,7 +5,7 @@
 			<div class="col-md-4">
 				<div class="jumbotron">
 					<h2><%= link_to group.name.capitalize, group_path(group) %></h2>
-					<h5>Organizer: </h5>
+					<h5>Organizer: <%= group.group_users.where('role = ?', 'organizer').first.user.full_name %></h5>
 				</div>
 			</div>
 		<% end %>
