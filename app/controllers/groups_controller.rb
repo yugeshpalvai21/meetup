@@ -1,9 +1,11 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only: [:show, :edit, :update, :destroy]
+
   def index
     @groups = Group.all
   end
 
-  def show
+  def show  
   end
 
   def new
@@ -21,11 +23,9 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
   end
 
   def update
-    @group = Group.find(params[:id])
     if @group.update_attributes(group_params)
       flash[:success] =  "Group Updated Successfully"
       redirect_to group_path(@group)
@@ -41,5 +41,9 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:name)
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
   end
 end
