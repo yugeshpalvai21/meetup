@@ -1,2 +1,15 @@
-<h1>Form Data Goes Here...</h1>
-<%= link_to "Process Data", process_data_path, method: :post %>
+<h1 class="text-center">Please Export Data</h1>
+<hr />
+<div class="container">
+	<%= form_tag process_data_path, method: :post, multipart: true do %>
+		<div class="form-group">
+			<%= label_tag 'Attach Data'%> 
+			<br />
+			<%= file_field_tag 'csv_file', accept: '.csv', class: 'from-control' %>
+		</div>
+
+		<div class="form-group">
+			<%= submit_tag "Submit Data", class: 'btn btn-info btn-lg' %>
+		</div>
+	<% end %>
+</div>
