@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-groups = ["Ruby", "Rails", "React"]
+# groups = ["Ruby", "Rails", "React"]
 
-groups.each do |name|
-	Group.create!(name: name)
-end
+# groups.each do |name|
+# 	Group.create!(name: name)
+# end
