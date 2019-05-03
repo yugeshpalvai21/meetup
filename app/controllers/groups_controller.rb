@@ -35,6 +35,9 @@ class GroupsController < ApplicationController
   end
 
   def destroy
+    @group.destroy
+    flash[:success] = "Group Deleted Successfully Along With Associated Members"
+    redirect_to groups_path
   end
 
   private
