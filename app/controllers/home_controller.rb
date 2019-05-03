@@ -19,7 +19,7 @@ class HomeController < ApplicationController
     else
     	records = CSV.read(params[:csv_file].path)
       extract_csv_data(records)   	
-    	flash[:notice] = "Processed Data Successfully"
+    	flash[:success] = "Processed Data Successfully"
     	redirect_to root_path
     end
   end
