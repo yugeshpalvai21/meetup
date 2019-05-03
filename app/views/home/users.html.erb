@@ -1,0 +1,27 @@
+<div class="container">
+	<h1 align="center">All Users List</h1>
+	<% if @users.any? %>
+		<table class="table">
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Associated Groups</th>
+			</tr>
+			<% @users.each do |user| %>
+				<tr>
+					<td><%= user.first_name.capitalize %></td>
+					<td><%= user.last_name.capitalize %></td>
+					<td>
+						<ul>
+							<% user.group_users.each do |group| %>
+								<li><%= "#{group.group.name.capitalize} - #{group.role.capitalize}" %></li>
+							<% end %>
+						</ul>
+					</td>
+				</tr>
+			<% end %>
+		</table>
+	<% else %>
+		<h3>No Users Yet...</h3>
+	<% end %>
+</div>
