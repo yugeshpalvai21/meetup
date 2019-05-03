@@ -12,6 +12,7 @@ class HomeController < ApplicationController
   end
 
   def process_data
+    # Check Whether The File is Uploaded or Not
     if params[:csv_file].nil?
       flash[:info] = "Please Attach File To Process"
       redirect_to import_data_path

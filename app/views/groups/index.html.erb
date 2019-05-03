@@ -5,6 +5,7 @@
 			<div class="col-md-4">
 				<div class="jumbotron">
 					<h2><%= link_to group.name.capitalize, group_path(group) %></h2>
+					<%# Calling Helper Method To Display Organizer(s) Name%>
 					<h5>Organizer: <%= find_group_organizers(group) %></h5>
 				</div>
 			</div>

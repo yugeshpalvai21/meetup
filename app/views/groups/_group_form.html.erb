@@ -1,6 +1,7 @@
 <%= form_for @group do |f| %>
+	<%# Displaying Error Messages If Any...%>
 	<% if @group.errors.any? %>
-		<div id="error_explanation">
+		<div>
 			<h2><%= pluralize(@group.errors.count, "error") %> encounter while saving your record:</h2>
 			<ul>
 			  <% @group.errors.full_messages.each do |msg| %>
